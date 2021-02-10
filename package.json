@@ -2,7 +2,7 @@
   "name": "three_journey",
   "version": "1.0.0",
   "description": "three.js library journey",
-  "main": "./sketch.js",
+  "main": "./sketch_01.js",
   "scripts": {
     "dev": "parcel src/ch_01/index.html",
     "build": "parcel src/ch_01/index.html"

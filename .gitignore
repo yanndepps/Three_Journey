@@ -1,5 +1,6 @@
+node_modules/
+dist/
+.cache/
+.log/
 .projectile
 *.org
-node_modules/
-.cache/
-dist/
