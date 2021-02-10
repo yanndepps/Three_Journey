@@ -1,0 +1,110 @@
+[14:54:25.579] Global cache location '/home/depps/.cache/typescript/4.1', safe file path '/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/typingSafeList.json', types map path /home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/typesMap.json
+[14:54:25.580] Processing cache location '/home/depps/.cache/typescript/4.1'
+[14:54:25.581] Trying to find '/home/depps/.cache/typescript/4.1/package.json'...
+[14:54:25.584] Loaded content of '/home/depps/.cache/typescript/4.1/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.527"},"devDependencies":{"@types/dat.gui":"^0.7.6","@types/defined":"^1.0.0","@types/eslint":"^7.2.6","@types/eslint-config-prettier":"^6.11.0","@types/p5":"^0.9.1","@types/prettier":"^2.1.5","@types/seed-random":"^2.2.0","@types/sprintf":"^0.1.0"}}
+[14:54:25.585] Loaded content of '/home/depps/.cache/typescript/4.1/package-lock.json'
+[14:54:25.607] Adding entry into typings cache: 'dat.gui' => '/home/depps/.cache/typescript/4.1/node_modules/@types/dat.gui/index.d.ts'
+[14:54:25.612] Adding entry into typings cache: 'defined' => '/home/depps/.cache/typescript/4.1/node_modules/@types/defined/index.d.ts'
+[14:54:25.616] Adding entry into typings cache: 'eslint' => '/home/depps/.cache/typescript/4.1/node_modules/@types/eslint/index.d.ts'
+[14:54:25.621] Adding entry into typings cache: 'eslint-config-prettier' => '/home/depps/.cache/typescript/4.1/node_modules/@types/eslint-config-prettier/index.d.ts'
+[14:54:25.625] Adding entry into typings cache: 'p5' => '/home/depps/.cache/typescript/4.1/node_modules/@types/p5/index.d.ts'
+[14:54:25.629] Adding entry into typings cache: 'prettier' => '/home/depps/.cache/typescript/4.1/node_modules/@types/prettier/index.d.ts'
+[14:54:25.633] Adding entry into typings cache: 'seed-random' => '/home/depps/.cache/typescript/4.1/node_modules/@types/seed-random/index.d.ts'
+[14:54:25.636] Adding entry into typings cache: 'sprintf' => '/home/depps/.cache/typescript/4.1/node_modules/@types/sprintf/index.d.ts'
+[14:54:25.636] Finished processing cache location '/home/depps/.cache/typescript/4.1'
+[14:54:25.636] Process id: 96339
+[14:54:25.636] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[14:54:25.636] validateDefaultNpmLocation: false
+[14:54:25.636] Npm config file: /home/depps/.cache/typescript/4.1/package.json
+[14:54:25.636] Updating types-registry npm package...
+[14:54:25.637] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[14:54:26.879]     Succeeded. stdout:
+    
+    up to date, audited 12 packages in 1s
+
+found 0 vulnerabilities
+
+[14:54:26.879] Updated types-registry npm package
+[14:54:28.163] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[14:54:28.229] Loaded safelist from types map file '/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/typesMap.json'
+[14:54:28.230] Explicitly included types: []
+[14:54:28.233] Inferred typings from unresolved imports: []
+[14:54:28.233] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[14:54:28.234] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[14:54:28.235] DirectoryWatcher:: Added:: WatchInfo: /home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components
+[14:54:28.239] DirectoryWatcher:: Added:: WatchInfo: /home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules
+[14:54:28.240] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[14:54:28.241] Response has been sent.
+[14:54:28.241] No new typings were requested as a result of typings discovery
+[15:04:41.346] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":["t"],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[15:04:41.347] Explicitly included types: []
+[15:04:41.349] Inferred typings from unresolved imports: ["t"]
+[15:04:41.350] Result: {"cachedTypingPaths":[],"newTypingNames":["t"],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:04:41.350] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":["t"],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:04:41.351] Installing typings ["t"]
+[15:04:41.352] 't':: Entry for package 't' does not exist in local types registry - skipping...
+[15:04:41.352] All typings are known to be missing or invalid - no need to install more typings
+[15:04:41.352] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":["t"],"kind":"action::set"}
+[15:04:41.352] Response has been sent.
+[15:04:43.126] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[15:04:43.126] Explicitly included types: []
+[15:04:43.126] Inferred typings from unresolved imports: []
+[15:04:43.126] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:04:43.126] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:04:43.127] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[15:04:43.127] Response has been sent.
+[15:04:43.127] No new typings were requested as a result of typings discovery
+[15:07:22.149] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":["thr"],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[15:07:22.150] Explicitly included types: []
+[15:07:22.151] Inferred typings from unresolved imports: ["thr"]
+[15:07:22.152] Result: {"cachedTypingPaths":[],"newTypingNames":["thr"],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:22.152] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":["thr"],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:22.152] Installing typings ["thr"]
+[15:07:22.153] 'thr':: Entry for package 'thr' does not exist in local types registry - skipping...
+[15:07:22.153] All typings are known to be missing or invalid - no need to install more typings
+[15:07:22.153] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":["thr"],"kind":"action::set"}
+[15:07:22.153] Response has been sent.
+[15:07:22.194] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":["thre"],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[15:07:22.195] Explicitly included types: []
+[15:07:22.196] Inferred typings from unresolved imports: ["thre"]
+[15:07:22.196] Result: {"cachedTypingPaths":[],"newTypingNames":["thre"],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:22.196] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":["thre"],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:22.197] Installing typings ["thre"]
+[15:07:22.197] 'thre':: Entry for package 'thre' does not exist in local types registry - skipping...
+[15:07:22.197] All typings are known to be missing or invalid - no need to install more typings
+[15:07:22.197] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":["thre"],"kind":"action::set"}
+[15:07:22.197] Response has been sent.
+[15:07:23.995] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[15:07:23.996] Explicitly included types: []
+[15:07:23.997] Inferred typings from unresolved imports: []
+[15:07:23.997] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:23.997] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:23.998] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[15:07:23.998] Response has been sent.
+[15:07:23.998] No new typings were requested as a result of typings discovery
+[15:07:27.582] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":["three"],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[15:07:27.583] Explicitly included types: []
+[15:07:27.584] Inferred typings from unresolved imports: ["three"]
+[15:07:27.584] Result: {"cachedTypingPaths":[],"newTypingNames":["three"],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:27.585] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":["three"],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:27.585] Installing typings ["three"]
+[15:07:27.585] 'three':: Entry for package 'three' does not exist in local types registry - skipping...
+[15:07:27.585] All typings are known to be missing or invalid - no need to install more typings
+[15:07:27.585] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":["three"],"kind":"action::set"}
+[15:07:27.586] Response has been sent.
+[15:07:50.750] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[15:07:50.750] Explicitly included types: []
+[15:07:50.750] Inferred typings from unresolved imports: []
+[15:07:50.751] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:50.751] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[15:07:50.751] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[15:07:50.751] Response has been sent.
+[15:07:50.751] No new typings were requested as a result of typings discovery

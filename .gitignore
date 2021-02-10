@@ -1,0 +1,5 @@
+.projectile
+*.org
+node_modules/
+.cache/
+dist/

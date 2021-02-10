@@ -1,0 +1,19 @@
+{
+  "name": "three_journey",
+  "version": "1.0.0",
+  "description": "three.js library journey",
+  "main": "./sketch.js",
+  "scripts": {
+    "dev": "parcel src/ch_01/index.html",
+    "build": "parcel src/ch_01/index.html"
+  },
+  "keywords": [],
+  "author": "depps",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.125.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.3.1"
+  }
+}

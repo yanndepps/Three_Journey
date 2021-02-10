@@ -1,0 +1,39 @@
+[16:46:52.622] Global cache location '/home/depps/.cache/typescript/4.1', safe file path '/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/typingSafeList.json', types map path /home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/typesMap.json
+[16:46:52.623] Processing cache location '/home/depps/.cache/typescript/4.1'
+[16:46:52.623] Trying to find '/home/depps/.cache/typescript/4.1/package.json'...
+[16:46:52.624] Loaded content of '/home/depps/.cache/typescript/4.1/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.527"},"devDependencies":{"@types/dat.gui":"^0.7.6","@types/defined":"^1.0.0","@types/eslint":"^7.2.6","@types/eslint-config-prettier":"^6.11.0","@types/p5":"^0.9.1","@types/prettier":"^2.1.5","@types/seed-random":"^2.2.0","@types/sprintf":"^0.1.0"}}
+[16:46:52.624] Loaded content of '/home/depps/.cache/typescript/4.1/package-lock.json'
+[16:46:52.640] Adding entry into typings cache: 'dat.gui' => '/home/depps/.cache/typescript/4.1/node_modules/@types/dat.gui/index.d.ts'
+[16:46:52.644] Adding entry into typings cache: 'defined' => '/home/depps/.cache/typescript/4.1/node_modules/@types/defined/index.d.ts'
+[16:46:52.648] Adding entry into typings cache: 'eslint' => '/home/depps/.cache/typescript/4.1/node_modules/@types/eslint/index.d.ts'
+[16:46:52.652] Adding entry into typings cache: 'eslint-config-prettier' => '/home/depps/.cache/typescript/4.1/node_modules/@types/eslint-config-prettier/index.d.ts'
+[16:46:52.656] Adding entry into typings cache: 'p5' => '/home/depps/.cache/typescript/4.1/node_modules/@types/p5/index.d.ts'
+[16:46:52.662] Adding entry into typings cache: 'prettier' => '/home/depps/.cache/typescript/4.1/node_modules/@types/prettier/index.d.ts'
+[16:46:52.665] Adding entry into typings cache: 'seed-random' => '/home/depps/.cache/typescript/4.1/node_modules/@types/seed-random/index.d.ts'
+[16:46:52.667] Adding entry into typings cache: 'sprintf' => '/home/depps/.cache/typescript/4.1/node_modules/@types/sprintf/index.d.ts'
+[16:46:52.668] Finished processing cache location '/home/depps/.cache/typescript/4.1'
+[16:46:52.668] Process id: 97916
+[16:46:52.668] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[16:46:52.668] validateDefaultNpmLocation: false
+[16:46:52.668] Npm config file: /home/depps/.cache/typescript/4.1/package.json
+[16:46:52.668] Updating types-registry npm package...
+[16:46:52.668] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[16:46:53.980]     Succeeded. stdout:
+    
+    up to date, audited 12 packages in 1s
+
+found 0 vulnerabilities
+
+[16:46:53.980] Updated types-registry npm package
+[16:46:55.184] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/depps/Documents/Kode/Three_Journey/src/ch_01/sketch.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/depps/Documents/Kode/Three_Journey/src/ch_01","kind":"discover"}
+[16:46:55.221] Loaded safelist from types map file '/home/depps/.emacs.d/.local/etc/lsp/npm/typescript/lib/node_modules/typescript/lib/typesMap.json'
+[16:46:55.222] Explicitly included types: []
+[16:46:55.223] Inferred typings from unresolved imports: []
+[16:46:55.223] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[16:46:55.223] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components","/home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules"]}
+[16:46:55.224] DirectoryWatcher:: Added:: WatchInfo: /home/depps/Documents/Kode/Three_Journey/src/ch_01/bower_components
+[16:46:55.227] DirectoryWatcher:: Added:: WatchInfo: /home/depps/Documents/Kode/Three_Journey/src/ch_01/node_modules
+[16:46:55.228] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[16:46:55.229] Response has been sent.
+[16:46:55.229] No new typings were requested as a result of typings discovery
