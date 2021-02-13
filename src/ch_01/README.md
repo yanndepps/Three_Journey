@@ -63,3 +63,20 @@
     ```
 -   group objects into a container using the `Group` class.
 -   [code](sketch_02.js)
+
+
+### animations
+
+-   we want to execute a function that will move objects and do the render on each frame regardless of the frame rate.
+-   the native JS way of doing it the `window.requestAnimationFrame( ... )` method.
+-   `requestAnimationFrame` will execute the function provided **on the next frame**.
+-   to adapt the animation to the framerate, we need to know how much time elapsed.
+-   use `Date.now()` to get the current timestamp:
+    
+    ```js
+    const time = Date.now();
+    ```
+-   the timestamp corresponds to how much time has passed since the 1st of January 1970 ( Unix ); units in milliseconds.
+-   the deltaTime should be arond `16` if our screen is running at `60fps`.
+-   a built-in solution in Three.js is `Clock`, it will handle time calculations.
+-   [code](sketch_03.js)
