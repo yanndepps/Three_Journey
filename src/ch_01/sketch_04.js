@@ -2,9 +2,10 @@
  * chapter_01
  * sketch_04
  * cameras
+ * 34.41
  */
 
-import './style.css';
+import "./style.css";
 
 import {
   Scene,
@@ -14,24 +15,31 @@ import {
   PerspectiveCamera,
   WebGLRenderer,
   AxesHelper,
-  Group,
   Clock,
-} from 'three';
-
-import gsap from 'gsap';
+  OrthographicCamera,
+  Vector3,
+} from "three";
 
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
+// Cursor
+const cursor = {
+  x: 0,
+  y: 0,
+};
+
+window.addEventListener("mousemove", (e) => {
+  cursor.x = e.clientX / sizes.width - 0.5;
+  cursor.y = -(e.clientY / sizes.height - 0.5);
+});
 
 // Scene
 const scene = new Scene();
 
-/*
- * Objects - Group
- */
-
+// Base
 const mesh = new Mesh(
-  new BoxGeometry(1, 1, 1),
-  new MeshBasicMaterial({ color: 0xFFFD01 })
+  new BoxGeometry(1, 1, 1, 5, 5, 5),
+  new MeshBasicMaterial({ color: 0xfffd01 })
 );
 
 scene.add(mesh);
@@ -43,64 +51,43 @@ scene.add(ah);
 // sizes for temp aspect ratio
 const sizes = {
   width: 800,
-  height: 600
+  height: 600,
 };
 
 // Camera
-const cam = new PerspectiveCamera(75, sizes.width / sizes.height);
+const aspectRatio = sizes.width / sizes.height;
+const cam = new PerspectiveCamera(75, aspectRatio, 0.1, 100);
+// const cam = new OrthographicCamera(-1 * aspectRatio, 1 * aspectRatio, 1, -1, 0.1, 100);
 cam.position.set(0, 0, 3);
+cam.lookAt(mesh.position);
 scene.add(cam);
 
 // Renderer
-const canvas = document.querySelector('canvas.webgl');
+const canvas = document.querySelector("canvas.webgl");
 // console.log(canvas);
 const renderer = new WebGLRenderer({
-  canvas
+  canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
 
-// Time
-// let time = Date.now();
-
-// Clock
-// const clock = new Clock();
-
-// Twean with GSAP
-gsap.to(mesh.position, { duration: 2, delay: 1, x: 2 });
-gsap.to(mesh.position, { duration: 2, delay: 2, x: 0 });
-
 // Animation
-const tick = () => {
-  // Time
-  // let currentTime = Date.now();
-  // let deltaTime = currentTime - time;
-  // time = currentTime;
-  // console.log(deltaTime);
+const clock = new Clock();
 
-  // Clock
-  // const elapsedTime = clock.getElapsedTime();
+const tick = () => {
+  // time
+  const elapsedTime = clock.getElapsedTime();
 
   // update objects
-  // mesh.rotation.y += 0.02 * deltaTime;
-
-  // update objects using Clock
   // mesh.rotation.y = elapsedTime;
 
-  // on revolution per second
-  // mesh.rotation.y = elapsedTime * Math.PI * 2;
-
-  // sine & cosine
-  // mesh.position.y = Math.sin(elapsedTime);
-  // mesh.position.x = Math.cos(elapsedTime);
-
-  // animate the camera
-  // cam.position.y = Math.sin(elapsedTime);
-  // cam.position.x = Math.cos(elapsedTime);
-  // cam.lookAt(mesh.position);
+  // update camera
+  cam.position.x = cursor.x * 3;
+  cam.position.y = cursor.y * 3;
+  cam.lookAt(mesh.position);
 
   // render
   renderer.render(scene, cam);
   window.requestAnimationFrame(tick);
-}
+};
 
 tick();
