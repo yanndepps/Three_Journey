@@ -80,3 +80,12 @@
 -   the deltaTime should be arond `16` if our screen is running at `60fps`.
 -   a built-in solution in Three.js is `Clock`, it will handle time calculations.
 -   [code](sketch_03.js)
+
+
+### cameras
+
+-   the `Camera` class is called an **abstract** class. we inherit from it to have access to common properties and methods.
+-   the **field of view** corresponds to our camera view&rsquo;s vertical amplitude angle in degrees. a small angle will end up with a long scope effect, and a wide angle with a fish eye effect.
+-   the **aspect ratio** correspond to the width divided by the height.
+-   the **near** and **far** parameters correspond to how close and how far the camera can see; any object or part of closer to the cam than the `near` value or further than the `far` one will not show.
+-   [code](sketch_04.js)
