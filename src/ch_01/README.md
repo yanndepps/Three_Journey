@@ -89,3 +89,46 @@
 -   the **aspect ratio** correspond to the width divided by the height.
 -   the **near** and **far** parameters correspond to how close and how far the camera can see; any object or part of closer to the cam than the `near` value or further than the `far` one will not show.
 -   [code](sketch_04.js)
+
+
+### fullscreen & resizing
+
+-   first, make the canvas takes all the available space, then make sure it fits if we resize our window and finally, give the user a way to experiment with the experience in fullscreen.
+-   use `window.innerWidth` and `window.innerHeight` to make the canvas fit in the viewport.
+    
+    ```js
+    const sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight
+                }
+    ```
+-   to resize the canvas, listen to the `resize` event on the window.
+    
+    ```js
+    window.addEventListener('resize', () => {
+        console.log('resized!');
+                });
+    ```
+-   we need to update the `sizes` variable, the `camera` aspect ratio, the **projection matrix** and the `renderer`.
+    
+    ```js
+    window.addEventListener('resize', () => {
+        // sizes
+        sizes.width = window.innerWidth;
+        sizes.height = window.innerHeight;
+        // camera
+        cam.aspect = sizes.width / sizes.height;
+        // renderer
+        renderer.setSize(sizes.width, sizes.height);
+                });
+    ```
+-   the pixel ratio corresponds to how many physical pixels on screens for one pixel unit on the software part.
+-   a pixel ratio of `2` means 4x more pixels to render, and so on. ( `3` -> 9x )
+-   limit the pixel ratio to `2` using `Math.min()`.
+    
+    ```js
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    ```
+-   use `document.fullscreenElement` to know if we are or not in fullscreen.
+-   the method is associated with the element, because we can choose what will be in fullscreen ( the whole page, any DOM element or the `<canvas>` ).
+-   [code](sketch_05.js)
