@@ -183,3 +183,6 @@
 
 
 ### debug UI
+
+-   an essential aspect of every creative project is making debugging easy and tweaking our code.
+-   [code](sketch_07.js)
