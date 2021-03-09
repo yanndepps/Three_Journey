@@ -132,3 +132,50 @@
 -   use `document.fullscreenElement` to know if we are or not in fullscreen.
 -   the method is associated with the element, because we can choose what will be in fullscreen ( the whole page, any DOM element or the `<canvas>` ).
 -   [code](sketch_05.js)
+
+
+### geometries
+
+-   geometries are composed of vertices ( point coordinates in 3D spaces ) and faces ( triangles that join those vertices to create a surface ).
+-   we use geometries to create meshes but also to form particles.
+-   subdivisions correspond to how much triangles should compose the face.
+-   we can use `BufferGeometry` to create our own geometries.
+-   to add vertices to a `BufferGeometry` we must start with a `Float32Array`, where we can specify its length and fill it later:
+    
+    ```js
+    const posArray = new Float32Array(9);
+    // first vertex
+    posArray[0] = 0;
+    posArray[1] = 0;
+    posArray[2] = 0;
+    // second vertex
+    posArray[3] = 0;
+    posArray[4] = 1;
+    posArray[5] = 0;
+    // thired vertex
+    posArray[6] = 1;
+    posArray[7] = 0;
+    posArray[8] = 0;
+    ```
+-   or we can pass an array:
+    
+    ```js
+    const posArray = new Float32Array([
+        0, 0, 0, // first vertex
+        0, 1, 0, // second vertex
+        1, 0, 0, // third vertex
+                ]);
+    ```
+-   the coordinates of the vertices are specified linearly in an one-dimensional array where we specify the `x`, `y` and `z` positions of the first vertex and so on.
+-   before we can send that array to the `BufferGeometry`, we have to transform it into a `BufferAttribute`. the first parameter corresponds to our typed array and the second one to how much values make one vertex attribute.
+    
+    ```js
+    const posAttribute = new THREE.BufferAttribute(posArray, 3);
+    ```
+-   then we add this attribute to our `BufferGeometry` using the `setAttribute( ... )` method. the first parameter being the name of this attribute and the second one the value :
+    
+    ```js
+    geometry.setAttribute('position', posAttribute);
+    ```
+-   we choose `'position'` because Three.js internal shaders will look for that value to position the vertices; the faces will be automatically created following the order of the vertices.
+-   working with `BufferGeometry` allows us to mutualize vertices using the `index` property, resulting in a smaller attribute array and performance improvement.
