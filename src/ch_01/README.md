@@ -179,3 +179,7 @@
     ```
 -   we choose `'position'` because Three.js internal shaders will look for that value to position the vertices; the faces will be automatically created following the order of the vertices.
 -   working with `BufferGeometry` allows us to mutualize vertices using the `index` property, resulting in a smaller attribute array and performance improvement.
+-   [code](sketch_06.js)
+
+
+### debug UI
