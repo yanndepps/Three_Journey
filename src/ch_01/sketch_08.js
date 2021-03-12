@@ -2,7 +2,7 @@
  * chapter_01
  * sketch_08
  * textures
- * 22.58
+ * 48.11
  */
 
 import "./style.css";
@@ -20,19 +20,49 @@ import {
   BoxBufferGeometry,
   Texture,
   TextureLoader,
+  LoadingManager,
 } from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as dat from 'dat.gui';
 import gsap from 'gsap';
-import image from '../../assets/textures/door/color.jpg';
-console.log(image);
+import colorTex from '../../assets/textures/door/color.jpg';
+import alphaTex from '../../assets/textures/door/alpha.jpg';
+import heightTex from '../../assets/textures/door/height.jpg';
+import normalTex from '../../assets/textures/door/normal.jpg';
+import aoTex from '../../assets/textures/door/ambientOcclusion.jpg';
+import metalTex from '../../assets/textures/door/metalness.jpg';
+import roughTex from '../../assets/textures/door/roughness.jpg';
 
 /*
  * Textures
  */
 
-const loader = new TextureLoader();
-const texture = loader.load(image);
+const loadingManager = new LoadingManager();
+
+// loadingManager.onStart = () => {
+//   console.log('onStart');
+// };
+
+// loadingManager.onLoad = () => {
+//   console.log('onLoad');
+// };
+
+// loadingManager.onProgress = () => {
+//   console.log('onProgress');
+// };
+
+// loadingManager.onError = () => {
+//   console.log('onError');
+// };
+
+const loader = new TextureLoader(loadingManager);
+const colorTexture = loader.load(colorTex);
+const alphaTexture = loader.load(alphaTex);
+const heightTexture = loader.load(heightTex);
+const normalTexture = loader.load(normalTex);
+const aoTexture = loader.load(aoTex);
+const metalTexture = loader.load(metalTex);
+const roughTexture = loader.load(roughTex);
 
 /*
  * Debug
@@ -84,8 +114,9 @@ window.addEventListener("mousemove", (e) => {
 // Mesh
 
 const geo = new BoxBufferGeometry(1, 1, 1);
+// console.log(geo.attributes.uv);
 const mat = new MeshBasicMaterial({
-  map: texture,
+  map: colorTexture,
   wireframe: false
 });
 
