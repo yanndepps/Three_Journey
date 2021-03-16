@@ -186,3 +186,84 @@
 
 -   an essential aspect of every creative project is making debugging easy and tweaking our code.
 -   [code](sketch_07.js)
+
+
+### textures
+
+-   textures are images that cover the surface of our geometries and give them different effects and/or appearance.
+-   **color** or **albedo** only takes the pixels of the texture and apply them to the geo.
+-   **alpha** is a grayscale image where white is visible and black is not.
+-   **height** is a grayscale image that moves the vertices to create relief.
+-   **normal** adds small details by luring the light. good for performance as we don&rsquo;t need to subdivide the geo.
+-   **ambient occlusion** is a grayscale image that fakes shadow in the surface crevices. it helps to create contrast without being physically accurate.
+-   **metalness** is a grayscale iamge that helps to create reflections.
+-   **roughness** is a grayscale image that comes with metalness and helps to dissipate the light.
+-   **PBR** stands for Physically Based Rendering. techniques that tend to follow real-life directions to get realistic results.
+-   we can import the image texture like any JS dependencies:
+    
+    ```js
+    import img from './image.png';
+    console.log(img);
+    ```
+-   we need to create a `Texture` from that image before we can use it:
+    
+    ```js
+    const textLoader = new THREE.TextureLoader();
+    const tex = texLoader.load(img);
+    ```
+-   we can load as many textures as we want with only one `TextureLoader` instance.
+-   finally we can mutualize the events with a `LoadingManager`.
+    
+    ```js
+    const loadingManager = new THREE.LoadingManager();
+    const texLoader = new THREE.Texture(loadingManager);
+    ```
+-   we can listen to various events `onStart`, `onLoad`, `onProgress` and `onError`.
+    
+    ```js
+    const loadingManager = new THREE.LoadingManager();
+    loadingManager.onStart = () => { console.log( 'loading started' ); }
+    ```
+-   the `LoadingManager` is very useful if you want to show a loader and hide it only when all the assets are loaded.
+-   we can repeat the texture using the `repeat` property, which is a `Vector2` with `x` and `y` properties.
+    
+    ```js
+    const colorTexture = textLoader.load('/textures/door/color.jpg');
+    colorTexture.repeat.x = 2;
+    colorTexture.repeat.y = 3;
+    ```
+-   the texture not being set to repeat itself, we may have to update the `wrapS` and `wrapT` properties using the `THREE.RepeatWrapping` constant.
+    
+    ```js
+    colorTexture.wrapS = THREE.RepeatWrapping;
+    colorTexture.wrapT = THREE.RepeatWrapping;
+    ```
+-   we can alternate the direction with `THREE.MirroredRepeatWrapping` :
+    
+    ```js
+    colorTexture.wrapS = THREE.MirroredRepeatWrapping;
+    ```
+-   the `offset` property is also a `Vector2` that will simply offset the UV coordinates :
+    
+    ```js
+    colorTexture.offset.x = 0.5;
+    colorTexture.offset.y = 0.5;
+    ```
+-   we can rotate the texture using the `rotation` property, which is a simple number corresponding to the angle in radians.
+-   the `center` property is also a `Vector2` allows us to change the pivot of rotation, that is, the `0, 0` UV coordinates.
+    
+    ```js
+    colorTexture.rotation = Math.PI * 0.25;
+    colorTexture.center.x = 0.5;
+    colorTexture.center.y = 0.5;
+    ```
+-   **mip mapping** is a technique that consists of creating half a smaller version of a texture again and again until you get a 1x1 texture. the GPU will choose the most appropriate version of the texture.
+-   the minification filter happens when the pixels of a texture are smaller than the the pixels of the render. we can change the minification filter of the texture using the `minFilter` property.
+-   only use the mipmaps for the `minFilter` property. using the `THREE.NearestFilter` one do not need the mipmaps which can be deactivated with `generateMipmaps = false`.
+    
+    ```js
+    colorTexture.generateMipmaps = false;
+    colorTexture.minFilter = THREE.NearestFilter;
+    ```
+-   because of mipmapping, our texture width and height must be a power of 2.
+-   [code](sketch_08.js)

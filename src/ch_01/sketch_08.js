@@ -2,7 +2,6 @@
  * chapter_01
  * sketch_08
  * textures
- * 48.11
  */
 
 import "./style.css";
