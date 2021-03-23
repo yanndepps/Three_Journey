@@ -267,3 +267,6 @@
     ```
 -   because of mipmapping, our texture width and height must be a power of 2.
 -   [code](sketch_08.js)
+
+
+### materials
