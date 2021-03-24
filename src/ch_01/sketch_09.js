@@ -5,23 +5,7 @@
  */
 
 import "./style.css";
-import {
-  Scene,
-  MeshBasicMaterial,
-  Mesh,
-  PerspectiveCamera,
-  WebGLRenderer,
-  AxesHelper,
-  Clock,
-  SphereGeometry,
-  PlaneGeometry,
-  TorusGeometry,
-  Texture,
-  TextureLoader,
-  LoadingManager,
-  Color,
-  MeshNormalMaterial,
-} from "three";
+import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // import all textures
 import colorTex from '../../assets/textures/door/color.jpg';
@@ -31,16 +15,15 @@ import normalTex from '../../assets/textures/door/normal.jpg';
 import aoTex from '../../assets/textures/door/ambientOcclusion.jpg';
 import metalTex from '../../assets/textures/door/metalness.jpg';
 import roughTex from '../../assets/textures/door/roughness.jpg';
-import gradTex from '../../assets/textures/gradients/3.jpg';
-import matcaTex from '../../assets/textures/matcaps/4.png';
+import gradTex from '../../assets/textures/gradients/5.jpg';
+import matcaTex from '../../assets/textures/matcaps/7.png';
+// import debug panel
+import * as dat from 'dat.gui';
+import { Shape } from "three";
 
-
-/*
- * Textures
- */
-
-const loadingManager = new LoadingManager();
-const loader = new TextureLoader(loadingManager);
+// Textures
+const loadingManager = new THREE.LoadingManager();
+const loader = new THREE.TextureLoader(loadingManager);
 
 const colorTexture = loader.load(colorTex);
 const alphaTexture = loader.load(alphaTex);
@@ -52,14 +35,18 @@ const roughTexture = loader.load(roughTex);
 const gradTexture = loader.load(gradTex);
 const matcaTexture = loader.load(matcaTex);
 
-/*
- * Base
- */
+gradTexture.minFilter = THREE.NearestFilter;
+gradTexture.magFilter = THREE.NearestFilter;
+gradTexture.generateMipmaps = false;
+
+// Debug
+const gui = new dat.GUI;
+
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
 
 // Scene
-const scene = new Scene();
+const scene = new THREE.Scene();
 
 // Cursor
 const cursor = {
@@ -72,9 +59,8 @@ window.addEventListener("mousemove", (e) => {
   cursor.y = -(e.clientY / sizes.height - 0.5);
 });
 
-/*
- * Objects
- */
+// Objects & Materials
+//
 // MeshBasicMaterial
 // const mat = new MeshBasicMaterial();
 // mat.color.set(0xfffd01);
@@ -87,35 +73,93 @@ window.addEventListener("mousemove", (e) => {
 // mat.alphaMap = alphaTexture;
 
 // MeshNormalMaterial
-const mat = new MeshNormalMaterial();
+// const mat = new MeshNormalMaterial();
+// mat.flatShading = true;
 
-const sphere = new Mesh(
-  new SphereGeometry(0.5, 16, 16),
+// MeshMatcapMaterial
+// const mat = new MeshMatcapMaterial();
+// mat.matcap = matcaTexture;
+
+// MeshDepthMaterial
+// const mat = new MeshDepthMaterial();
+
+// MeshLambertMaterial
+// const mat = new MeshLambertMaterial();
+
+// MeshPhongMaterial
+// const mat = new MeshPhongMaterial();
+// mat.shininess = 100;
+// mat.specular = new Color(0x1188ff);
+
+// MeshToonMaterial
+// const mat = new MeshToonMaterial();
+// mat.gradientMap = gradTexture;
+
+// MeshStandardMaterial
+const mat = new THREE.MeshStandardMaterial();
+mat.map = colorTexture;
+mat.aoMap = aoTexture;
+
+// add debug params
+gui.add(mat, 'metalness')
+  .min(0)
+  .max(1)
+  .step(0.0001);
+
+gui.add(mat, 'roughness')
+  .min(0)
+  .max(1)
+  .step(0.0001);
+
+gui.add(mat, 'aoMapIntensity')
+  .min(0)
+  .max(5)
+  .step(0.0001);
+
+// add objects
+const sphere = new THREE.Mesh(
+  new THREE.SphereGeometry(0.5, 16, 16),
   mat
 );
+
+// add uv's in order to place ambient occlusion on the texture
+sphere.geometry.setAttribute('uv2', new THREE.BufferAttribute(sphere.geometry.attributes.uv.array, 2));
 
 sphere.position.x = -1.5;
 
-const plane = new Mesh(
-  new PlaneGeometry(1, 1),
+const plane = new THREE.Mesh(
+  new THREE.PlaneGeometry(1, 1),
   mat
 );
 
-const torus = new Mesh(
-  new TorusGeometry(0.3, 0.2, 16, 32),
+// add uv's in order to place ambient occlusion on the texture
+plane.geometry.setAttribute('uv2', new THREE.BufferAttribute(plane.geometry.attributes.uv.array, 2));
+
+const torus = new THREE.Mesh(
+  new THREE.TorusGeometry(0.3, 0.2, 16, 32),
   mat
 );
+
+// add uv's in order to place ambient occlusion on the texture
+torus.geometry.setAttribute('uv2', new THREE.BufferAttribute(torus.geometry.attributes.uv.array, 2));
+
 
 torus.position.x = 1.5;
 
 scene.add(sphere, plane, torus);
 
 // Axes helper
-const ah = new AxesHelper(2);
+const ah = new THREE.AxesHelper(2);
 scene.add(ah);
 
-// Debug
-// ---
+// Lights
+const ambLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambLight);
+
+const poLight = new THREE.PointLight(0xffffff, 0.5);
+poLight.position.set(2, 3, 4);
+scene.add(poLight);
+
 // sizes of the viewport
 const sizes = {
   width: window.innerWidth,
@@ -148,7 +192,7 @@ window.addEventListener('dblclick', () => {
 
 // Camera
 const aspectRatio = sizes.width / sizes.height;
-const cam = new PerspectiveCamera(75, aspectRatio, 0.1, 100);
+const cam = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 100);
 // const cam = new OrthographicCamera(-1 * aspectRatio, 1 * aspectRatio, 1, -1, 0.1, 100);
 cam.position.set(0, 0, 3);
 cam.lookAt(plane.position);
@@ -160,14 +204,14 @@ ctrl.enableDamping = true;
 // ctrl.enabled = false;
 
 // Renderer
-const renderer = new WebGLRenderer({
+const renderer = new THREE.WebGLRenderer({
   canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // Animation
-const clock = new Clock();
+const clock = new THREE.Clock();
 
 const tick = () => {
   // time
