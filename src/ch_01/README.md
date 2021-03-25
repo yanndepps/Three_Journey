@@ -270,3 +270,37 @@
 
 
 ### materials
+
+-   materials are used to put a color on each visible pixel of the geometries. the algorithms are written in programs called **shaders**.
+-   the `map` property applies a texture on the surfce of the geometry:
+    
+    ```js
+    material.map = doorColorTexture;
+    ```
+-   the `color` property applies a uniform color on the surface of the geometry. we must instantiate a `Color` class when changing a `color` property directly:
+    
+    ```js
+    material.color = new THREE.Color(0xff0000);
+    ```
+-   the `opacity` property controls the transparency with the `transparent` property set to `true` :
+    
+    ```js
+    material.transparent = true;
+    material.opacity = 0.5;
+    ```
+-   **normals** are information encoded in each vertex that contains the direction of the outside of the face. they can be used to calculate how to illuminate the face or how the environment should reflect or refract on the geometries&rsquo; surface.
+-   the `aoMap` property ( ambient occlusion map ) adds shadows where the texture is dark. we must add a second set of UV; we duplicate the `uv` attribute :
+    
+    ```js
+    sphere.geometry.setAttribute(
+        'uv2',
+        new THREE.BufferAttribute(sphere.geometry.attributes.uv.array, 2)
+    );
+    ```
+-   the environment map is like an image of what&rsquo;s surrounding the scene. it adds reflection or refraction to our objects and can also be used as lighting information.
+-   cube environment maps are 6 images each corresponding to a side of the environment. we load them with `CubeTextureLoader` and an array of paths. we use them with the `envMap` property of our material :
+    
+    ```js
+    material.envMap = environmentMapTexture;
+    ```
+-   [code](sketch_09.js)

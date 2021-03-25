@@ -17,13 +17,21 @@ import metalTex from '../../assets/textures/door/metalness.jpg';
 import roughTex from '../../assets/textures/door/roughness.jpg';
 import gradTex from '../../assets/textures/gradients/5.jpg';
 import matcaTex from '../../assets/textures/matcaps/7.png';
+// import environment maps
+import envMaps_0 from '../../assets/textures/environmentMaps/3/px.jpg';
+import envMaps_1 from '../../assets/textures/environmentMaps/3/nx.jpg';
+import envMaps_2 from '../../assets/textures/environmentMaps/3/py.jpg';
+import envMaps_3 from '../../assets/textures/environmentMaps/3/ny.jpg';
+import envMaps_4 from '../../assets/textures/environmentMaps/3/pz.jpg';
+import envMaps_5 from '../../assets/textures/environmentMaps/3/nz.jpg';
+
 // import debug panel
 import * as dat from 'dat.gui';
-import { Shape } from "three";
 
 // Textures
 const loadingManager = new THREE.LoadingManager();
 const loader = new THREE.TextureLoader(loadingManager);
+const cubeLoader = new THREE.CubeTextureLoader(loadingManager);
 
 const colorTexture = loader.load(colorTex);
 const alphaTexture = loader.load(alphaTex);
@@ -38,6 +46,15 @@ const matcaTexture = loader.load(matcaTex);
 gradTexture.minFilter = THREE.NearestFilter;
 gradTexture.magFilter = THREE.NearestFilter;
 gradTexture.generateMipmaps = false;
+
+const envMapTexture = cubeLoader.load([
+  envMaps_0,
+  envMaps_1,
+  envMaps_2,
+  envMaps_3,
+  envMaps_4,
+  envMaps_5
+]);
 
 // Debug
 const gui = new dat.GUI;
@@ -96,9 +113,23 @@ window.addEventListener("mousemove", (e) => {
 // mat.gradientMap = gradTexture;
 
 // MeshStandardMaterial
+// const mat = new THREE.MeshStandardMaterial();
+// mat.map = colorTexture;
+// mat.aoMap = aoTexture;
+// mat.displacementMap = heightTexture;
+// mat.displacementScale = 0.05;
+// mat.metalnessMap = metalTexture;
+// mat.roughnessMap = roughTexture;
+// mat.normalMap = normalTexture;
+// mat.normalScale.set(0.8, 0.8);
+// mat.transparent = true;
+// mat.alphaMap = alphaTexture;
+
+// Env Map
 const mat = new THREE.MeshStandardMaterial();
-mat.map = colorTexture;
-mat.aoMap = aoTexture;
+mat.metalness = 0.7;
+mat.roughness = 0.2;
+mat.envMap = envMapTexture;
 
 // add debug params
 gui.add(mat, 'metalness')
@@ -111,14 +142,19 @@ gui.add(mat, 'roughness')
   .max(1)
   .step(0.0001);
 
-gui.add(mat, 'aoMapIntensity')
-  .min(0)
-  .max(5)
-  .step(0.0001);
+// gui.add(mat, 'aoMapIntensity')
+//   .min(0)
+//   .max(5)
+//   .step(0.0001);
+
+// gui.add(mat, 'displacementScale')
+//   .min(0)
+//   .max(1)
+//   .step(0.0001);
 
 // add objects
 const sphere = new THREE.Mesh(
-  new THREE.SphereGeometry(0.5, 16, 16),
+  new THREE.SphereGeometry(0.5, 64, 64),
   mat
 );
 
@@ -128,7 +164,7 @@ sphere.geometry.setAttribute('uv2', new THREE.BufferAttribute(sphere.geometry.at
 sphere.position.x = -1.5;
 
 const plane = new THREE.Mesh(
-  new THREE.PlaneGeometry(1, 1),
+  new THREE.PlaneGeometry(1, 1, 100, 100),
   mat
 );
 
@@ -136,7 +172,7 @@ const plane = new THREE.Mesh(
 plane.geometry.setAttribute('uv2', new THREE.BufferAttribute(plane.geometry.attributes.uv.array, 2));
 
 const torus = new THREE.Mesh(
-  new THREE.TorusGeometry(0.3, 0.2, 16, 32),
+  new THREE.TorusGeometry(0.3, 0.2, 64, 128),
   mat
 );
 
