@@ -308,4 +308,57 @@
 
 ### 3d text
 
+-   to load our font :
+    
+    ```js
+    const fontLoader = new THREE.FontLoader()
+    
+    fontLoader.load(
+        '/fonts/helvetiker_regular.typeface.json',
+        (font) =>
+        {
+            console.log('loaded')
+        }
+    )
+    ```
+-   use of TextGeometry :
+    
+    ```js
+    fontLoader.load(
+        '/fonts/helvetiker_regular.typeface.json',
+        (font) =>
+        {
+            const textGeometry = new THREE.TextGeometry(
+                'Hello Three.js',
+                {
+                    font: font,
+                    size: 0.5,
+                    height: 0.2,
+                    curveSegments: 12,
+                    bevelEnabled: true,
+                    bevelThickness: 0.03,
+                    bevelSize: 0.02,
+                    bevelOffset: 0,
+                    bevelSegments: 5
+                }
+            )
+            const textMaterial = new THREE.MeshBasicMaterial()
+            const text = new THREE.Mesh(textGeometry, textMaterial)
+            scene.add(text)
+        }
+    )
+    ```
+-   keep the geom as low as possible by reducing the `curveSegments` and `bevelSegments` props.
+-   **frustum culling** uses bounding to calculate if the object is on screen.
+-   in order to optimize our code, we can use both the same material and geometry on multiple `Meshes`.
+    
+    ```js
+    const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
+    const donutMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+    
+    for(let i = 0; i < 100; i++)
+    {
+        // ...
+    }
+    ```
 -   [code](sketch_10.js)

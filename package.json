@@ -4,7 +4,7 @@
   "description": "three.js library journey",
   "main": "./sketch_01.js",
   "scripts": {
-    "dev": "parcel src/ch_01/index.html",
+    "dev": "parcel src/ch_02/index.html",
     "build": "parcel src/ch_01/index.html"
   },
   "keywords": [],
