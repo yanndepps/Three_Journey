@@ -304,3 +304,8 @@
     material.envMap = environmentMapTexture;
     ```
 -   [code](sketch_09.js)
+
+
+### 3d text
+
+-   [code](sketch_10.js)
